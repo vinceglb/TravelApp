@@ -26,6 +26,11 @@ val Typography = Typography(
         fontWeight = FontWeight.Normal,
         fontSize = 14.sp
     ),
+    button = TextStyle(
+        fontFamily = Poppins,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 14.sp
+    ),
     overline = TextStyle(
         fontFamily = Poppins,
         fontWeight = FontWeight.Light,
@@ -41,7 +46,6 @@ val Typography = Typography(
         fontWeight = FontWeight.SemiBold,
         fontSize = 24.sp
     )
-
 
     /* Other default text styles to override
     button = TextStyle(

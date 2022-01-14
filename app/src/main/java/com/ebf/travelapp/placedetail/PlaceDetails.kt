@@ -1,4 +1,4 @@
-package com.ebf.travelapp
+package com.ebf.travelapp.placedetail
 
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.compose.foundation.Image
@@ -8,19 +8,26 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.*
+import androidx.compose.material.icons.rounded.Explore
+import androidx.compose.material.icons.rounded.KingBed
+import androidx.compose.material.icons.rounded.Star
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
+import com.ebf.travelapp.R
+import com.ebf.travelapp.components.IconText
+import com.ebf.travelapp.components.Menu
+import com.ebf.travelapp.components.TextLocation
+import com.ebf.travelapp.components.Title
 import com.ebf.travelapp.ui.theme.GreenNice
 import com.ebf.travelapp.ui.theme.OrangeNice
 import com.ebf.travelapp.ui.theme.PurpleNice
@@ -140,44 +147,65 @@ fun PlaceDetailsContent() {
 }
 
 @Composable
-fun IconButtonMenu(icon: ImageVector) {
-    Surface(
-        onClick = {},
-        shape = MaterialTheme.shapes.medium,
-        color = MaterialTheme.colors.surface
-    ) {
-        Box(
-            contentAlignment = Alignment.Center,
-            modifier = Modifier.size(44.dp)
+fun BookNow() {
+    Surface {
+        Row(
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 24.dp, vertical = 10.dp)
         ) {
-            Icon(
-                icon,
-                contentDescription = null,
-                tint = MaterialTheme.colors.onSurface,
-                modifier = Modifier.size(20.dp)
-            )
+            Column(
+                modifier = Modifier.weight(0.4f)
+            ) {
+                Text(
+                    text = "$2000",
+                    style = MaterialTheme.typography.body1.copy(fontWeight = FontWeight.SemiBold)
+                )
+                Text(text = "Total Cost", style = MaterialTheme.typography.overline)
+            }
+            Button(
+                onClick = { /*TODO*/ },
+                shape = MaterialTheme.shapes.medium,
+                contentPadding = PaddingValues(
+                    start = 12.dp,
+                    end = 12.dp,
+                    top = 13.dp,
+                    bottom = 10.dp
+                ),
+                modifier = Modifier.weight(0.6f)
+            ) {
+                Text(text = "Book Now")
+            }
         }
     }
 }
 
+@Preview(uiMode = UI_MODE_NIGHT_YES)
 @Composable
-fun Menu(modifier: Modifier = Modifier) {
-    Row(
-        horizontalArrangement = Arrangement.SpaceBetween,
-        modifier = modifier.fillMaxWidth()
-    ) {
-        IconButtonMenu(icon = Icons.Rounded.ArrowBackIosNew)
-        IconButtonMenu(icon = Icons.Rounded.Bookmark)
+fun BookNowPreview() {
+    TravelAppTheme {
+        BookNow()
     }
 }
 
 @Composable
-fun PlaceDetailsScreen() {
+fun PlaceDetailsScreen(
+    navBack: () -> Unit,
+    navigateToBookmark: () -> Unit,
+    modifier: Modifier = Modifier
+) {
     val scrollState = rememberScrollState()
 
-    Scaffold {
+    Scaffold(
+        bottomBar = { BookNow() },
+        modifier = modifier
+    ) { innerPadding ->
         ConstraintLayout(
-            modifier = Modifier.verticalScroll(scrollState)
+            modifier = Modifier
+                .padding(innerPadding)
+                .verticalScroll(scrollState)
         ) {
             val (image, card, content, menu) = createRefs()
 
@@ -221,7 +249,9 @@ fun PlaceDetailsScreen() {
                     start.linkTo(parent.start, margin = 24.dp)
                     end.linkTo(parent.end, margin = 24.dp)
                     width = Dimension.fillToConstraints
-                }
+                },
+                pressBack = navBack,
+                pressBookmark = navigateToBookmark
             )
         }
     }
@@ -232,6 +262,9 @@ fun PlaceDetailsScreen() {
 @Composable
 fun PlaceDetailsScreenPreview() {
     TravelAppTheme {
-        PlaceDetailsScreen()
+        PlaceDetailsScreen(
+            navBack = {},
+            navigateToBookmark = {}
+        )
     }
 }
