@@ -179,7 +179,6 @@ fun RecommendedSection() {
             modifier = Modifier
                 .fillMaxWidth()
                 .height(150.dp)
-                // .aspectRatio(1f)
                 .clip(MaterialTheme.shapes.medium)
         )
 
