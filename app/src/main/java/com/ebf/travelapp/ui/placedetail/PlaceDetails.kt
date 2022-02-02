@@ -1,4 +1,4 @@
-package com.ebf.travelapp.placedetail
+package com.ebf.travelapp.ui.placedetail
 
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.compose.foundation.Image
@@ -24,10 +24,10 @@ import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import com.ebf.travelapp.R
-import com.ebf.travelapp.components.IconText
-import com.ebf.travelapp.components.Menu
-import com.ebf.travelapp.components.TextLocation
-import com.ebf.travelapp.components.Title
+import com.ebf.travelapp.ui.components.IconText
+import com.ebf.travelapp.ui.components.Menu
+import com.ebf.travelapp.ui.components.TextLocation
+import com.ebf.travelapp.ui.components.Title
 import com.ebf.travelapp.ui.theme.GreenNice
 import com.ebf.travelapp.ui.theme.OrangeNice
 import com.ebf.travelapp.ui.theme.PurpleNice

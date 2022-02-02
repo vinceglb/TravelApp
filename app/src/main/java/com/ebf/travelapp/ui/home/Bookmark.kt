@@ -1,4 +1,4 @@
-package com.ebf.travelapp.home
+package com.ebf.travelapp.ui.home
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
@@ -19,8 +19,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.ebf.travelapp.R
-import com.ebf.travelapp.components.Menu
-import com.ebf.travelapp.components.TextLocation
+import com.ebf.travelapp.ui.components.Menu
+import com.ebf.travelapp.ui.components.TextLocation
 import com.ebf.travelapp.ui.theme.OrangeNice
 import com.ebf.travelapp.ui.theme.TravelAppTheme
 

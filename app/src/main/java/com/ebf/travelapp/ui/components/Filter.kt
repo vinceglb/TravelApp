@@ -1,4 +1,4 @@
-package com.ebf.travelapp.components
+package com.ebf.travelapp.ui.components
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
@@ -13,6 +13,24 @@ import com.ebf.travelapp.ui.theme.BlueNice
 import com.ebf.travelapp.ui.theme.PurpleNice
 import com.ebf.travelapp.ui.theme.RedNice
 import com.ebf.travelapp.ui.theme.TravelAppTheme
+
+@Composable
+fun ModalFilter(
+    modifier: Modifier = Modifier,
+    content: @Composable () -> Unit,
+) {
+    // var skipHalfExpanded by remember { mutableStateOf(false) }
+    val state = rememberModalBottomSheetState(initialValue = ModalBottomSheetValue.Hidden)
+    ModalBottomSheetLayout(
+        sheetState = state,
+        sheetContent = {
+            Filter()
+        },
+        modifier = modifier,
+    ) {
+        content()
+    }
+}
 
 @Composable
 fun Filter() {

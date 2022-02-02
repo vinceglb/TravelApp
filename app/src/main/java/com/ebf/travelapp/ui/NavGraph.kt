@@ -1,4 +1,4 @@
-package com.ebf.travelapp
+package com.ebf.travelapp.ui
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -10,11 +10,11 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import androidx.navigation.navigation
-import com.ebf.travelapp.MainDestinations.PLACE_DETAIL_ID
-import com.ebf.travelapp.MainDestinations.PLACE_DETAIL_ROUTE
-import com.ebf.travelapp.home.HomeTabs
-import com.ebf.travelapp.home.addHomeGraph
-import com.ebf.travelapp.placedetail.PlaceDetailsScreen
+import com.ebf.travelapp.ui.MainDestinations.PLACE_DETAIL_ID
+import com.ebf.travelapp.ui.MainDestinations.PLACE_DETAIL_ROUTE
+import com.ebf.travelapp.ui.home.HomeTabs
+import com.ebf.travelapp.ui.home.addHomeGraph
+import com.ebf.travelapp.ui.placedetail.PlaceDetailsScreen
 
 object MainDestinations {
     const val HOME_ROUTE = "home"

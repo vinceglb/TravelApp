@@ -1,4 +1,4 @@
-package com.ebf.travelapp.components
+package com.ebf.travelapp.ui.components
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Icon

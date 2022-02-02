@@ -1,4 +1,4 @@
-package com.ebf.travelapp.home
+package com.ebf.travelapp.ui.home
 
 import android.content.res.Configuration
 import androidx.compose.foundation.Image
@@ -23,7 +23,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.ebf.travelapp.R
-import com.ebf.travelapp.components.Menu
+import com.ebf.travelapp.ui.components.Menu
 import com.ebf.travelapp.ui.theme.*
 
 /**

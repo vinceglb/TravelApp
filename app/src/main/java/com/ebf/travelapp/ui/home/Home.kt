@@ -1,4 +1,4 @@
-package com.ebf.travelapp.home
+package com.ebf.travelapp.ui.home
 
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons

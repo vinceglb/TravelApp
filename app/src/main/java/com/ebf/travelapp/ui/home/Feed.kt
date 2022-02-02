@@ -1,4 +1,4 @@
-package com.ebf.travelapp.home
+package com.ebf.travelapp.ui.home
 
 import android.content.res.Configuration
 import androidx.compose.foundation.*
@@ -20,9 +20,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.ebf.travelapp.R
-import com.ebf.travelapp.components.PlaceCard
-import com.ebf.travelapp.components.TextLocation
-import com.ebf.travelapp.components.Title
+import com.ebf.travelapp.ui.components.PlaceCard
+import com.ebf.travelapp.ui.components.TextLocation
+import com.ebf.travelapp.ui.components.Title
 import com.ebf.travelapp.ui.theme.*
 
 @Composable
